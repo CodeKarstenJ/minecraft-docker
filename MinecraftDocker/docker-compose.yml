@@ -14,7 +14,7 @@ services:
       - ${RCON_PORT}
     container_name: ${CONTAINER_NAME}
     volumes:
-      - server-data:/server
+      - .server-data:/server
 
 volumes:
   server-data:
