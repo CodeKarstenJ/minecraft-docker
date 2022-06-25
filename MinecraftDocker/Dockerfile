@@ -1,0 +1,15 @@
+ARG JAVA_VERSION
+ARG SERVER_MEMORY
+ARG SERVER_FILE
+ARG SERVER_START_MESSAGE
+
+ENV java=${JAVA_VERSION}
+ENV ram=${SERVER_MEMORY}
+ENV file=${SERVER_FILE}
+ENV message=${SERVER_START_MESSAGE}
+
+FROM ${java}
+
+WORKDIR /server
+
+CMD echo ${message} && java -Xms${ram} -jar ${file}

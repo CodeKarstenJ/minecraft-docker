@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  minecraft-server:
+    build:
+      context: .
+      args:
+        JAVA_VERSION: ${JAVA_VERSION}
+        SERVER_MEMORY: ${SERVER_MEMORY}
+        SERVER_FILE: ${SERVER_FILE}
+        SERVER_START_MESSAGE: ${SERVER_START_MESSAGE}
+    ports:
+      - ${SERVER_PORT}
+      - ${RCON_PORT}
+    container_name: ${CONTAINER_NAME}
+    volumes:
+      - server-data:/server
+
+volumes:
+  server-data:
